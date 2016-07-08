@@ -1,0 +1,8 @@
+obj := devide.o mult.o minus.o plus.o
+
+all: $(obj)
+
+%.o: %.c 1.h
+		$(CC) -c $<
+libcalc.a : %.o 1.h
+		ar cr libcalc.a $(obj)
